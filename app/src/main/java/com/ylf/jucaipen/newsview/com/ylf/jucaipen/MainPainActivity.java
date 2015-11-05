@@ -2,7 +2,9 @@ package com.ylf.jucaipen.newsview.com.ylf.jucaipen;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaScannerConnection;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -42,13 +44,18 @@ public class MainPainActivity extends Activity {
             stream.close();
             // send broadcast to Media to update data
             Intent intent = new Intent();
-            intent.setAction(Intent.ACTION_MEDIA_MOUNTED);
-            intent.setData(Uri.fromFile(Environment
-                    .getExternalStorageDirectory()));
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){//判断版本是不是4.4或者4.4 之上
+                String[] paths = new String[]{Environment.getExternalStorageDirectory().toString()};
+                MediaScannerConnection.scanFile(this, paths, null, null);
+            }else{
+                intent.setAction(Intent.ACTION_MEDIA_MOUNTED);
+                intent.setData(Uri.fromFile(Environment
+                        .getExternalStorageDirectory()));
+            }
             sendBroadcast(intent);
-            Toast.makeText(this, "save success", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "保存成功", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
-            Toast.makeText(this, "save failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "保存失败", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
     }
