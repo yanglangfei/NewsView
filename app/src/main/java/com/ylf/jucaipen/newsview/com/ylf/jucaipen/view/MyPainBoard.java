@@ -9,7 +9,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
-
 import java.io.OutputStream;
 
 /**
@@ -83,5 +82,10 @@ public class MyPainBoard extends View {
         if (mBitmap != null) {
             mBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
         }
+    }
+
+    public void setmBitmap(Bitmap mBitmap) {
+        this.mBitmap = mBitmap;
+        invalidate();
     }
 }

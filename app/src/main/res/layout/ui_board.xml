@@ -7,13 +7,35 @@
         android:id="@+id/paintBoard2"
         android:layout_height="0dp"
         android:layout_weight="1"/>
-    <Button
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="40dp"
+        android:orientation="horizontal">
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
         android:layout_marginRight="20dp"
-        android:onClick="OnSaveClicked"
+        android:onClick="OnOpen"
+        android:layout_weight="1"
         android:layout_marginLeft="20dp"
-        android:text="保存"/>
+        android:text="打开"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="20dp"
+            android:onClick="OnReset"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:text="重置"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="20dp"
+            android:onClick="OnSaveClicked"
+            android:layout_marginLeft="20dp"
+            android:text="保存"/>
+    </LinearLayout>
 
 
 </LinearLayout>

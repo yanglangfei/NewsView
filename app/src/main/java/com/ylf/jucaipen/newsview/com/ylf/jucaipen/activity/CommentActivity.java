@@ -1,4 +1,4 @@
-package com.ylf.jucaipen.newsview.com.ylf.jucaipen;
+package com.ylf.jucaipen.newsview.com.ylf.jucaipen.activity;
 
 import android.app.Activity;
 import android.graphics.Color;

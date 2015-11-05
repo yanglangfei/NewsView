@@ -1,4 +1,4 @@
-package com.ylf.jucaipen.newsview;
+package com.ylf.jucaipen.newsview.com.ylf.jucaipen.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
+import com.ylf.jucaipen.newsview.R;
 
 public class MainActivity extends Activity {
     @ViewInject(R.id.news_content)
@@ -57,7 +58,7 @@ public class MainActivity extends Activity {
     private void initView() {
         news_content.setText(Html.fromHtml(content));
         news_content.setLineSpacing(-8,1);
-        
+
 
 
     }
